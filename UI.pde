@@ -502,12 +502,12 @@ void screenInit() {
     LCD.print_P(0, 11, PSTR("Beer"));
     LCD.print_P(0, 17, PSTR("H2O"));
     LCD.print_P(1, 8, PSTR("In"));
-    LCD.print_P(2, 7, PSTR("Out"));
+//RDE    LCD.print_P(2, 7, PSTR("Out"));
 
     LCD.print_P(1, 14, TUNIT);
     LCD.print_P(1, 19, TUNIT);
-    LCD.print_P(2, 14, TUNIT);
-    LCD.print_P(2, 19, TUNIT);
+//RDE    LCD.print_P(2, 14, TUNIT);
+//RDE    LCD.print_P(2, 19, TUNIT);
     
     if (screenLock) {
       LCD.print_P(3, 0, PSTR(">"));
@@ -753,10 +753,11 @@ void screenRefresh() {
     }
     if (temp[TS_KETTLE] == BAD_TEMP) LCD.print_P(1, 11, PSTR("---")); else LCD.lPad(1, 11, itoa(temp[TS_KETTLE] / 100, buf, 10), 3, ' ');
     if (temp[TS_BEEROUT] == BAD_TEMP) LCD.print_P(2, 11, PSTR("---")); else LCD.lPad(2, 11, itoa(temp[TS_BEEROUT] / 100, buf, 10), 3, ' ');
-    if (temp[TS_H2OIN] == BAD_TEMP) LCD.print_P(1, 16, PSTR("---")); else LCD.lPad(1, 16, itoa(temp[TS_H2OIN] / 100, buf, 10), 3, ' ');
-    if (temp[TS_H2OOUT] == BAD_TEMP) LCD.print_P(2, 16, PSTR("---")); else LCD.lPad(2, 16, itoa(temp[TS_H2OOUT] / 100, buf, 10), 3, ' ');
-    if (vlvConfigIsActive(VLV_CHILLBEER)) LCD.print_P(3, 12, PSTR(" On")); else LCD.print_P(3, 12, PSTR("Off"));
-    if (vlvConfigIsActive(VLV_CHILLH2O)) LCD.print_P(3, 17, PSTR(" On")); else LCD.print_P(3, 17, PSTR("Off"));
+//RDE if (temp[TS_H2OIN] == BAD_TEMP) LCD.print_P(1, 16, PSTR("---")); else LCD.lPad(1, 16, itoa(temp[TS_H2OIN] / 100, buf, 10), 3, ' ');
+    if (temp[TS_HLT] == BAD_TEMP) LCD.print_P(1, 16, PSTR("---")); else LCD.lPad(1, 16, itoa(temp[TS_HLT] / 100, buf, 10), 3, ' '); // Use HLT as H20 in temp for chill
+//RDE    if (temp[TS_H2OOUT] == BAD_TEMP) LCD.print_P(2, 16, PSTR("---")); else LCD.lPad(2, 16, itoa(temp[TS_H2OOUT] / 100, buf, 10), 3, ' ');
+//RDE    if (vlvConfigIsActive(VLV_CHILLBEER)) LCD.print_P(3, 12, PSTR(" On")); else LCD.print_P(3, 12, PSTR("Off"));
+//RDE    if (vlvConfigIsActive(VLV_CHILLH2O)) LCD.print_P(3, 17, PSTR(" On")); else LCD.print_P(3, 17, PSTR("Off"));
 
   } else if (activeScreen == SCREEN_AUX) {
     //Screen Refresh: AUX

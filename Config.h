@@ -35,7 +35,7 @@
 #ifdef USEMETRIC
   #define GRAIN_VOL_LOSS 1.7884
 #else
-  #define GRAIN_VOL_LOSS .2143
+  #define GRAIN_VOL_LOSS .125
 #endif
 
 // VOL_SHRINKAGE: The amount of liquid volume reduced as a result of decrease in temperature. 
@@ -499,7 +499,7 @@ static const byte TS = 1;
 //  !! AND/OR PERSONAL HARM!                                                         !!
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-//#define HLT_HEAT_SPARGE
+#define HLT_HEAT_SPARGE
 //#define HLT_MIN_SPARGE 2000
 //**********************************************************************************
 
