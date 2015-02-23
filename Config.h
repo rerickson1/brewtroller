@@ -196,12 +196,7 @@ static const byte TS = 1;
 // A valve profile is activated based on the boil additions schedule during the boil
 // stage of AutoBrew. The parameter below is used to define how long (in milliseconds)
 // the profile stays active during each addition.
-// Note: This value is also applied at the end of boil if a 0 Min boil addition is
-// included in the schedule. The delay at the end is implemented using the delay() 
-// function which will freeze all other processing of AutoBrew operations at the end
-// of boil for the specified number of milliseconds.
-
-#define HOPADD_DELAY 5000
+#define HOPADD_DELAY 0
 //**********************************************************************************
 
 //**********************************************************************************
@@ -323,7 +318,7 @@ static const byte TS = 1;
 // You need to set the addresses of each display in the Com_BTPD.h file.
 
 // BTPD_INTERVAL: Specifies how often BTPD devices are updated in milliseconds
-#define BTPD_INTERVAL 1000
+#define BTPD_INTERVAL 500
 
 // Show temperature and volume per kettle on the same display.  Every other update
 // interval the display will switch from temperature to volume.  Make sure that the
