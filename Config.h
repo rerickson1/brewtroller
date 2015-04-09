@@ -35,7 +35,7 @@
 #ifdef USEMETRIC
   #define GRAIN_VOL_LOSS 1.7884
 #else
-  #define GRAIN_VOL_LOSS .125
+  #define GRAIN_VOL_LOSS .12
 #endif
 
 // VOL_SHRINKAGE: The amount of liquid volume reduced as a result of decrease in temperature. 
